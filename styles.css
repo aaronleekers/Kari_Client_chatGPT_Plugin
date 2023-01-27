@@ -1,0 +1,69 @@
+.kari-ai-toolbar {
+    margin: 0.5em 0em;
+    display: flex;
+    align-items: end;
+}
+
+*:before, 
+*:after {
+    box-sizing: border-box;
+}
+
+.kari-ai-toggle {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.5em 0;
+}
+
+.kari-ai-toggle-switch {
+    display: inline-block;
+    background: #ccc;
+    border-radius: 8px;
+    width: 29px;
+    height: 16px;
+    position: relative;
+    vertical-align: middle;
+    transition: background 0.25s;
+}
+
+.kari-ai-toggle-switch:before,
+.kari-ai-toggle-switch:after {
+    content: "";
+}
+
+.kari-ai-toggle-switch:before {
+    display: block;
+    background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.25);
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: left 0.25s;
+}
+
+.kari-ai-toggle:hover .kari-ai-toggle-switch:before {
+    background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+    box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.5);
+}
+
+.kari-ai-toggle-checkbox:checked+.kari-ai-toggle-switch {
+    background: #10A37F;
+}
+
+.kari-ai-toggle-checkbox:checked+.kari-ai-toggle-switch:before {
+    left: 15px;
+}
+
+.kari-ai-toggle-checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+
+.kari-ai-toggle-label {
+    margin-left: 5px;
+    position: relative;
+    top: 2px;
+}

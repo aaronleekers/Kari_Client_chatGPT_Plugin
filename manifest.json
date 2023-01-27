@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Kari.ai Web Integration",
+  "version": "1.0",
+  "description": "Augment your ChatGPT prompts with financial information about any stock.",
+  "icons": {
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://kari-node-production.up.railway.app/api_search"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {},
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.openai.com/chat/*"
+      ],
+      "js": [
+        "script.js"
+      ],
+      "css": [
+        "styles.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "regions.json"
+      ],
+      "matches": [
+        "https://chat.openai.com/*"
+      ]
+    }
+  ]
+}
